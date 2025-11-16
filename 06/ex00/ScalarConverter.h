@@ -2,50 +2,33 @@
 #define SCALARCONVERTER_H
 
 #include <iostream>
-#include <string>
+#include <sstream>
+#include <limits>
+#include <iomanip>
+#include <cmath>
 
 class ScalarConverter
 {
 private:
-	const std::string	input;
-	int					variable_type;
-	char				char_value;
-	int					int_value;
-	float				float_value;
-	double				double_value;
+    ScalarConverter();
+    ScalarConverter(const ScalarConverter&);
+    ScalarConverter& operator=(const ScalarConverter&);
+    ~ScalarConverter();
 
-	ScalarConverter(); // ScalarConverter sc blocked
-	
-	int  validate_input();
-	void convert();
-
-	void from_char();
-	void from_int();
-	void from_float();
-	void from_double();
-
-	void print_output() const;
-
-	std::string get_input() const;
-	int         get_type() const;
-	char        get_char() const;
-	int         get_int() const;
-	float       get_float() const;
-	double      get_double() const;
+    static int validate_input(const std::string& input);
+    static void from_char(const std::string& input);
+    static void from_int(const std::string& input);
+    static void from_float(const std::string& input);
+    static void from_double(const std::string& input);
 
 public:
-	ScalarConverter(const std::string& input);
-	ScalarConverter(const ScalarConverter& src);
-	~ScalarConverter();
+    static void convert(const std::string& input);
 
-	ScalarConverter& operator=(const ScalarConverter& src);
-
-	class ErrorException : public std::exception
-	{
-	public:
-		virtual const char* what() const throw();
-	};
+    class ErrorException : public std::exception
+    {
+    public:
+        virtual const char* what() const throw();
+    };
 };
-
 
 #endif
