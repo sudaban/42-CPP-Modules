@@ -1,3 +1,6 @@
+#ifndef WHATEVER_H
+#define WHATEVER_H
+
 #include <iostream>
 
 template<typename T>
@@ -19,3 +22,5 @@ T const &max(T const &first, T const &second)
 {
     return (first > second) ? first : second;
 }
+
+#endif
