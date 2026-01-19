@@ -59,7 +59,7 @@ bool BitcoinExchange::valid_value(const std::string &value)
     float v = to_float(value);
 
     if (v < 0 || v > 1000) {
-        std::cout << (v < 0 ? "Error: not a positive number." : "Error: too large a number.") << std::endl;
+        std::cout << (v < 0 ?  ERR_POSITIVE : ERR_LARGE) << std::endl;
         return false;
     }
 
@@ -126,7 +126,7 @@ void BitcoinExchange::process_input(const std::string &file)
 
     if (!ifs.is_open())
     {
-        std::cout << "Error: could not open file." << std::endl;
+        std::cout << ERR_FILE << std::endl;
         return;
     }
 

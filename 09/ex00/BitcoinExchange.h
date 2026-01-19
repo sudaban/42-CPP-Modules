@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 10:08:29 by sdaban            #+#    #+#             */
-/*   Updated: 2026/01/19 11:22:47 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/01/19 17:27:57 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 #include <map>
 #include <string>
+
+#define ERR_POSITIVE "Error: not a positive number."
+#define ERR_LARGE    "Error: too large a number."
+#define ERR_FILE    "Error: could not open file."
 
 class BitcoinExchange
 {
