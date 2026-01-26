@@ -6,12 +6,12 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 11:40:40 by sdaban            #+#    #+#             */
-/*   Updated: 2026/01/20 11:52:49 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/01/26 11:54:28 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PmergeMe_H
-#define PmergeMe_H
+#ifndef PMERGEME_H
+#define PMERGEME_H
 
 #include <vector>
 #include <list>
@@ -60,4 +60,4 @@ public:
     void run(int argc, char **argv);
 };
 
-#endif // PmergeMe_H
+#endif // PMERGEME_H
