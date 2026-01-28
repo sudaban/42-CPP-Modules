@@ -1,4 +1,4 @@
-#include "BitcoinExchange.h"
+#include "BitcoinExchange.hpp"
 #include <iostream>
 
 #define DB_FILE "data.csv"

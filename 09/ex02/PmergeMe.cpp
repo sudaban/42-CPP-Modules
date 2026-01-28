@@ -1,4 +1,4 @@
-#include "PmergeMe.h"
+#include "PmergeMe.hpp"
 #include <cstdlib>
 #include <stdexcept>
 #include <limits>
@@ -29,7 +29,7 @@ bool PmergeMe::is_valid_number(const std::string &str)
         return false;
     
     for (size_t i = 0; i < str.length(); i++) {
-        if (!isdigit(str[i]))
+        if (!std::isdigit(str[i]))
             return false;
     }
     
@@ -51,7 +51,7 @@ void PmergeMe::parse_input(int argc, char **argv)
         if (!is_valid_number(arg))
             throw std::runtime_error(ERR_INVALID_ARG + arg);
         
-        int num = atoi(arg.c_str());
+        int num = std::atoi(arg.c_str());
         m_vector.push_back(num);
         m_list.push_back(num);
     }

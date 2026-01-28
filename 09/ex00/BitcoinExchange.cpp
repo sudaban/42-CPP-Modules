@@ -1,4 +1,4 @@
-#include "BitcoinExchange.h"
+#include "BitcoinExchange.hpp"
 #include <fstream>
 #include <sstream>
 #include <iostream>
@@ -16,7 +16,7 @@ std::string BitcoinExchange::trim(const std::string &s)
 
 float BitcoinExchange::to_float(const std::string &s)
 {
-    return static_cast<float>(atof(s.c_str()));
+    return static_cast<float>(std::atof(s.c_str()));
 }
 
 bool BitcoinExchange::valid_date(const std::string &date)
@@ -35,9 +35,9 @@ bool BitcoinExchange::valid_date(const std::string &date)
             return false;
     }
 
-    int year = atoi(date.substr(0, 4).c_str());
-    int month = atoi(date.substr(5, 2).c_str());
-    int day = atoi(date.substr(8, 2).c_str());
+    int year = std::atoi(date.substr(0, 4).c_str());
+    int month = std::atoi(date.substr(5, 2).c_str());
+    int day = std::atoi(date.substr(8, 2).c_str());
 
     if (month < 1 || month > 12 || day < 1 || day > 31 || year < 2009)
         return false;
@@ -52,7 +52,7 @@ bool BitcoinExchange::valid_value(const std::string &value)
 
     for (size_t i = 0; i < value.size(); i++)
     {
-        if (!isdigit(value[i]) && value[i] != '.')
+        if (!std::isdigit(value[i]) && value[i] != '.')
             return false;
     }
 
