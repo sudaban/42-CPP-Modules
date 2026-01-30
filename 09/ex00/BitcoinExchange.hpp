@@ -6,7 +6,7 @@
 /*   By: sdaban <sdaban@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 10:08:29 by sdaban            #+#    #+#             */
-/*   Updated: 2026/01/26 12:10:34 by sdaban           ###   ########.fr       */
+/*   Updated: 2026/01/30 11:07:25 by sdaban           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ private:
 
 public:
     BitcoinExchange() {}
+    BitcoinExchange(const BitcoinExchange& other);
+    BitcoinExchange& operator=(const BitcoinExchange& other);
     ~BitcoinExchange() {}
     bool load_database(const std::string &file);
     void process_input(const std::string &file);

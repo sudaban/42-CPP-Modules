@@ -4,6 +4,19 @@
 #include <iostream>
 #include <cstdlib>
 
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
+{
+    if (this != &other)
+    {
+        this->m_rates = other.m_rates;
+    }
+    return *this;
+}
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& other)
+{
+    operator=(other);
+}
 
 std::string BitcoinExchange::trim(const std::string &s)
 {
