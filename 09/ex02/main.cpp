@@ -1,9 +1,10 @@
 #include "PmergeMe.hpp"
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
-    if (argc < 2) {
-        std::cerr << "Error" << std::endl;
+    if (argc < 2)
+    {
+        std::cerr << "Error: no arguments provided" << std::endl;
         return 1;
     }
     
